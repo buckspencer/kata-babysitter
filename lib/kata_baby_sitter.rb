@@ -1,0 +1,2 @@
+module KataBabySitter
+end
