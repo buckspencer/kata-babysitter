@@ -18,8 +18,8 @@ module KataBabySitter
 #     PAYOUT << ((format_time(bed_time).hour - format_time(start_time).hour) * PRE_BED)
   end
 
-  def calc_pre_bed start, bed
-    
+  def self.calc_pre_bed start, bed
+
   end
 
   def self.format_time time
