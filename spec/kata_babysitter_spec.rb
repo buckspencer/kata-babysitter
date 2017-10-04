@@ -1,3 +1,4 @@
+require 'pry'
 require_relative '../lib/kata_baby_sitter'
 
 RSpec.describe "KataBabySitter" do
@@ -34,8 +35,8 @@ RSpec.describe "KataBabySitter" do
 
     subject { KataBabySitter.calc_payment(start_time, end_time, bed_time) }
 
-    # it { expect(subject).to eql(108) }
-    it { expect(subject).to eql('hello')}
+    it { expect(subject).to eql(108) }
+
   end
 
 end

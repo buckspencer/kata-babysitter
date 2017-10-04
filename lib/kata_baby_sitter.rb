@@ -10,7 +10,7 @@ module KataBabySitter
   HARD_END = 4
 
   def self.calc_payment start_time, end_time, bed_time
-    "hello"  
+    binding.pry 
   end
 
 end
