@@ -75,6 +75,18 @@ RSpec.describe "KataBabySitter" do
 
   end
 
+  describe 'calc_bed_to_midnight' do 
+    let(:bed_time)   {'9pm'}
+    let(:midnight) {'12pm'}
+
+    subject { KataBabySitter.calc_bed_to_midnight(bed_time)}
+
+    context 'when proper arguments' do 
+      it { expect(subject).to eql([24])}
+    end
+
+  end
+
   describe 'format_time' do 
 
     subject { KataBabySitter.format_time(time)}
