@@ -15,11 +15,11 @@ RSpec.describe "KataBabySitter" do
 
   describe 'business logic' do 
 
-      it { expect(subject::PRE_BED).to eql(12) }
+      it { expect(subject::PRE_BED).to eql(12) } #36
 
-      it { expect(subject::BED_TO_MIDNIGHT).to eql(8) }
+      it { expect(subject::BED_TO_MIDNIGHT).to eql(8) } #24
 
-      it { expect(subject::MIDNIGHT_TO_END).to eql(16) }
+      it { expect(subject::MIDNIGHT_TO_END).to eql(16) } #48 
 
       it { expect(subject::HARD_START.hour).to eql(17) }
 
@@ -36,21 +36,28 @@ RSpec.describe "KataBabySitter" do
     subject { KataBabySitter.calc_payment(start_time, end_time, bed_time) }
 
 
-    context 'when arguments are correctly given' do 
-      it { expect{subject}.not_to raise_error }
+    context 'working correctly' do 
+      it { expect(subject).to eql(108)}
     end
 
 
-    context 'when start_time is later than end_time' do 
-      let(:end_time)   { '6am'}
+    context 'error handling' do 
+      context 'when arguments are correctly given' do 
+        it { expect{subject}.not_to raise_error }
+      end
 
-      it { expect{subject}.to raise_error(ArgumentError, "Start and end times must be within given range.") }
-    end
 
-    context 'when end_time is before than start_time' do 
-      let(:end_time)   { '5pm'}
+      context 'when start_time is later than end_time' do 
+        let(:end_time)   { '6am'}
 
-      it { expect{subject}.to raise_error(ArgumentError, "Start time must come before end time.") }
+        it { expect{subject}.to raise_error(ArgumentError, "Start and end times must be within given range.") }
+      end
+
+      context 'when end_time is before than start_time' do 
+        let(:end_time)   { '5pm'}
+
+        it { expect{subject}.to raise_error(ArgumentError, "Start time must come before end time.") }
+      end
     end
 
   end
