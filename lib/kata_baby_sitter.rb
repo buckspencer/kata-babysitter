@@ -15,11 +15,10 @@ module KataBabySitter
   def self.calc_payment start_time, end_time, bed_time
     time_range_error if requirements_not_met? start_time, end_time
     order_error if format_time(start_time) > format_time(end_time)
-#     PAYOUT << ((format_time(bed_time).hour - format_time(start_time).hour) * PRE_BED)
   end
 
-  def self.calc_pre_bed start, bed
-
+  def self.calc_pre_bed start_time, bed_time
+    PAYOUT << ((format_time(bed_time).hour - format_time(start_time).hour) * PRE_BED)
   end
 
   def self.format_time time
