@@ -21,21 +21,37 @@ RSpec.describe "KataBabySitter" do
 
       it { expect(subject::MIDNIGHT_TO_END).to eql(16) }
 
-      it { expect(subject::HARD_START).to eql(17) }
+      it { expect(subject::HARD_START.hour).to eql(17) }
 
-      it { expect(subject::HARD_END).to eql(4) }
+      it { expect(subject::HARD_END.hour).to eql(4) }
 
   end
 
 
   describe 'calc_payment' do 
-    let(:start_time) { '6pm' }
-    let(:end_time)   { '3am'}
+    let(:start_time) {'6pm'}
     let(:bed_time)   {'9pm'}
+    let(:end_time)   {'3am'}
 
     subject { KataBabySitter.calc_payment(start_time, end_time, bed_time) }
 
-    it { expect(subject).to eql(108) }
+
+    context 'when arguments are correctly given' do 
+      it { expect{subject}.not_to raise_error }
+    end
+
+
+    context 'when start_time is later than end_time' do 
+      let(:end_time)   { '6am'}
+
+      it { expect{subject}.to raise_error(ArgumentError, "Start and end times must be within given range.") }
+    end
+
+    context 'when end_time is before than start_time' do 
+      let(:end_time)   { '5pm'}
+
+      it { expect{subject}.to raise_error(ArgumentError, "Start time must come before end time.") }
+    end
 
   end
 
