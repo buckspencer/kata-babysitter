@@ -39,4 +39,20 @@ RSpec.describe "KataBabySitter" do
 
   end
 
+  describe 'format_time' do 
+    subject { KataBabySitter.format_time(time)}
+
+    context 'when contains am' do 
+      let(:time) { '3am' }
+
+      it { expect(subject).to eql(Time.parse(time) + 86400) }
+    end
+
+    context 'when contains pm' do 
+      let(:time) { '3pm' }
+
+      it { expect(subject).to eql(Time.parse(time)) }
+    end
+  end
+
 end

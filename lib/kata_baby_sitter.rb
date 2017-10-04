@@ -1,3 +1,5 @@
+require 'time'
+
 module KataBabySitter
 
   ## pay rates
@@ -10,7 +12,14 @@ module KataBabySitter
   HARD_END = 4
 
   def self.calc_payment start_time, end_time, bed_time
+    start = format_time(start_time)
+    finish = 
     binding.pry 
+  end
+
+
+  def self.format_time time
+    time.include?('am') ? Time.parse(time) + 86400 : Time.parse(time)
   end
 
 end
