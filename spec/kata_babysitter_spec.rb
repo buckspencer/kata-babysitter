@@ -54,6 +54,13 @@ RSpec.describe 'KataBabySitter' do
         it { expect{ subject }.to raise_error(RuntimeError, 'Please verify that you are entering your hours properly.') }
       end
 
+      context 'when a decimal is passed' do 
+        let(:end_time)   { '11.5pm' }
+
+        it { expect{ subject }.to raise_error(RuntimeError, 'Please verify that you are entering your hours properly.') }
+      end
+
+
 
       context 'when start_time is later than end_time' do
         let(:end_time)   { '6am' }
@@ -73,9 +80,16 @@ RSpec.describe 'KataBabySitter' do
 
   describe 'calc_payment' do 
 
-    context 'working correctly' do
+    context 'with expected input' do
       it { expect(subject.calc_payment).to eql(108) }
     end
+
+    context 'when end is before midnight' do 
+      let(:end_time)   { '11pm' }
+
+      it { expect(subject.calc_payment).to eql(52) }
+    end
+
 
   end
 

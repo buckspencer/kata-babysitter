@@ -48,7 +48,7 @@ class KataBabySitter
   end
 
   def requirements_not_met?
-    (start_time <= HARD_START || end_time >= HARD_END)
+    (start_time < HARD_START || end_time > HARD_END)
   end
 
   def time_range_error
