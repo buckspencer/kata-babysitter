@@ -2,9 +2,6 @@ require 'time'
 
 module KataBabySitter
 
-  PAYOUT = []
-
-
   ## pay rates
   RATES = [PRE_BED = 12, BED_TO_MIDNIGHT = 8, MIDNIGHT_TO_END = 16]
 
@@ -16,6 +13,7 @@ module KataBabySitter
   def self.calc_payment start_time, end_time, bed_time
     time_range_error if requirements_not_met? start_time, end_time
     order_error if format_time(start_time) > format_time(end_time)
+    [calc_pre_bed(start_time, bed_time), calc_bed_to_midnight(bed_time), calc_midnight_to_end(end_time)].sum
   end
 
   def self.calc_pre_bed start_time, bed_time
