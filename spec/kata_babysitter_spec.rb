@@ -37,6 +37,22 @@ RSpec.describe 'KataBabySitter' do
         it { expect{ subject }.to raise_error(RuntimeError, 'Please verify that you are entering your hours properly.') }
       end
 
+      context 'when numbers are passed' do 
+        let(:start_time) { 9 }
+        let(:end_time)   { 9 }
+        let(:bed_time)   { 9 }
+
+        it { expect{ subject }.to raise_error(RuntimeError, 'Please verify that you are entering your hours properly.') }
+      end
+
+      context 'when words are passed' do 
+        let(:start_time) { 'hey' }
+        let(:end_time)   { 'hey' }
+        let(:bed_time)   { 'hey' }
+
+        it { expect{ subject }.to raise_error(RuntimeError, 'Please verify that you are entering your hours properly.') }
+      end
+
 
       context 'when start_time is later than end_time' do
         let(:end_time)   { '6am' }
@@ -54,14 +70,11 @@ RSpec.describe 'KataBabySitter' do
   end
 
 
-
   describe 'calc_payment' do 
 
     context 'working correctly' do
       it { expect(subject.calc_payment).to eql(108) }
     end
-
-
 
   end
 
@@ -105,7 +118,7 @@ RSpec.describe 'KataBabySitter' do
     end
 
     context 'when contains AM' do
-      let!(:time) { '3AM' }
+      let(:time) { '3AM' }
 
       it { expect(subject.format_time(time)).to eql(Time.parse(time) + KataBabySitter::DAY_IN_SECS) }
     end

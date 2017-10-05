@@ -44,7 +44,7 @@ class KataBabySitter
   end
 
   def format_time time
-    time.include?('am') ? Time.parse(time) + DAY_IN_SECS : Time.parse(time)
+    time.downcase.include?('am') ? Time.parse(time) + DAY_IN_SECS : Time.parse(time)
   end
 
   def requirements_not_met?
