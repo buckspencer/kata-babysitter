@@ -34,7 +34,7 @@ RSpec.describe 'KataBabySitter' do
         let(:end_time)   { nil }
         let(:bed_time)   { nil }
 
-        it { expect{ subject }.to raise_error(ArgumentError, "You must add valid arguments.") }
+        it { expect{ subject }.to raise_error(RuntimeError, 'Please verify that you are entering your hours properly.') }
       end
 
 
@@ -102,6 +102,12 @@ RSpec.describe 'KataBabySitter' do
       let(:time) { '3pm' }
 
       it { expect(subject.format_time(time)).to eql(Time.parse(time)) }
+    end
+
+    context 'when contains AM' do
+      let!(:time) { '3AM' }
+
+      it { expect(subject.format_time(time)).to eql(Time.parse(time) + KataBabySitter::DAY_IN_SECS) }
     end
   end
 

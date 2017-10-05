@@ -12,9 +12,16 @@ class KataBabySitter
   attr_reader :start_time, :end_time, :bed_time
 
   def initialize start_t, end_t, bed_t
-    @start_time = format_time(start_t)
-    @end_time = format_time(end_t)
-    @bed_time = format_time(bed_t)
+
+    begin
+
+      @start_time = format_time(start_t)
+      @end_time = format_time(end_t)
+      @bed_time = format_time(bed_t)
+
+    rescue
+      raise 'Please verify that you are entering your hours properly.'
+    end
 
     raise time_range_error if requirements_not_met?
     raise order_error if start_time > end_time
@@ -45,11 +52,15 @@ class KataBabySitter
   end
 
   def time_range_error
-    ArgumentError.new("Start and end times must be within given range.")
+    ArgumentError.new('Start and end times must be within given range.')
   end
 
   def order_error
-    ArgumentError.new("Start time must come before end time.")
+    ArgumentError.new('Start time must come before end time.')
+  end
+
+  def valid_arguments_error
+    ArgumentError.new('You must add valid arguments.')
   end
 
 end
