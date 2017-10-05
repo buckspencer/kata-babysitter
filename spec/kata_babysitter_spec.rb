@@ -46,11 +46,8 @@ RSpec.describe "KataBabySitter" do
 
   describe 'calc_payment' do 
 
-    before {subject.calc_payment}
-
-
     context 'working correctly' do 
-      it { is_expected.to eql(108)}
+      it { expect(subject.calc_payment).to eql(108)}
     end
 
   end
