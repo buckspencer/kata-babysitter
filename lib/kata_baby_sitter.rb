@@ -26,6 +26,10 @@ module KataBabySitter
     (MIDNIGHT - format_time(bed_time).hour) * BED_TO_MIDNIGHT
   end
 
+  def self.calc_midnight_to_end end_time
+    format_time(end_time).hour * MIDNIGHT_TO_END
+  end
+
   def self.format_time time
     time.include?('am') ? Time.parse(time) + 86400 : Time.parse(time)
   end

@@ -92,7 +92,7 @@ RSpec.describe "KataBabySitter" do
     subject { KataBabySitter.calc_midnight_to_end(end_time)}
 
     context 'when proper arguments' do 
-      it { expect(subject).to eql(16)}
+      it { expect(subject).to eql(48)}
     end
 
   end
