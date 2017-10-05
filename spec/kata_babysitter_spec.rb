@@ -5,6 +5,7 @@ RSpec.describe 'KataBabySitter' do
   let(:start_time) { '6pm' }
   let(:end_time)   { '3am' }
   let(:bed_time)   { '9pm' }
+  let(:day)        { KataBabySitter::DAY_IN_SECS }
 
   subject { KataBabySitter.new(start_time, end_time, bed_time) }
 
@@ -108,7 +109,7 @@ RSpec.describe 'KataBabySitter' do
     context 'when contains am' do 
       let(:time) { '3am' }
 
-      it { expect(subject.format_time(time)).to eql(Time.parse(time) + KataBabySitter::DAY_IN_SECS) }
+      it { expect(subject.format_time(time)).to eql(Time.parse(time) + day) }
     end
 
     context 'when contains pm' do
@@ -120,7 +121,7 @@ RSpec.describe 'KataBabySitter' do
     context 'when contains AM' do
       let(:time) { '3AM' }
 
-      it { expect(subject.format_time(time)).to eql(Time.parse(time) + KataBabySitter::DAY_IN_SECS) }
+      it { expect(subject.format_time(time)).to eql(Time.parse(time) + day) }
     end
   end
 
