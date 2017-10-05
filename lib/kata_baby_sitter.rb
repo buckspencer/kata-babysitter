@@ -8,31 +8,40 @@ class KataBabySitter
 
   RATES = [PRE_BED = 12, BED_TO_MIDNIGHT = 8, MIDNIGHT_TO_END = 16]
 
-  def calc_payment start_time, end_time, bed_time
-    time_range_error if requirements_not_met? start_time, end_time
-    order_error if format_time(start_time) > format_time(end_time)
+  attr_reader :start_time, :end_time, :bed_time 
 
-    [calc_pre_bed(start_time, bed_time), calc_bed_to_midnight(bed_time), calc_midnight_to_end(end_time)].sum
+
+  def initialize start_t, end_t, bed_t
+    @start_time = format_time(start_t)
+    @end_time = format_time(end_t)
+    @bed_time = format_time(bed_t)
+
+    time_range_error if requirements_not_met?
+    order_error if start_time > end_time
   end
 
-  def calc_pre_bed start_time, bed_time
-    (format_time(bed_time).hour - format_time(start_time).hour) * PRE_BED
+  def calc_payment
+    [calc_pre_bed, calc_bed_to_midnight, calc_midnight_to_end].sum
   end
 
-  def calc_bed_to_midnight bed_time
-    (MIDNIGHT - format_time(bed_time).hour) * BED_TO_MIDNIGHT
+  def calc_pre_bed
+    (bed_time.hour - start_time.hour) * PRE_BED
   end
 
-  def calc_midnight_to_end end_time
-    format_time(end_time).hour * MIDNIGHT_TO_END
+  def calc_bed_to_midnight
+    (MIDNIGHT - bed_time.hour) * BED_TO_MIDNIGHT
+  end
+
+  def calc_midnight_to_end
+    end_time.hour * MIDNIGHT_TO_END
   end
 
   def format_time time
     time.include?('am') ? Time.parse(time) + 86400 : Time.parse(time)
   end
 
-  def requirements_not_met? start, stop
-    (format_time(start) <= HARD_START || format_time(stop) >= HARD_END)
+  def requirements_not_met?
+    (start_time <= HARD_START || end_time >= HARD_END)
   end
 
 
