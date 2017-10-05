@@ -5,14 +5,6 @@ RSpec.describe "KataBabySitter" do
 
   subject {KataBabySitter}
 
-  describe 'potential overkill test' do 
-
-    it 'should exist' do
-      expect(subject.itself.name).to eql('KataBabySitter')
-    end
-
-  end
-
   describe 'business logic' do 
 
       it { expect(subject::PRE_BED).to eql(12) } #36
@@ -33,7 +25,7 @@ RSpec.describe "KataBabySitter" do
     let(:bed_time)   {'9pm'}
     let(:end_time)   {'3am'}
 
-    subject { KataBabySitter.calc_payment(start_time, end_time, bed_time) }
+    subject { KataBabySitter.new.calc_payment(start_time, end_time, bed_time) }
 
 
     context 'working correctly' do 
@@ -66,7 +58,7 @@ RSpec.describe "KataBabySitter" do
     let(:start_time) {'6pm'}
     let(:bed_time)   {'9pm'}
 
-    subject { KataBabySitter.calc_pre_bed(start_time, bed_time)}
+    subject { KataBabySitter.new.calc_pre_bed(start_time, bed_time)}
 
     context 'when proper arguments' do 
       it { expect(subject).to eql(36)}
@@ -78,7 +70,7 @@ RSpec.describe "KataBabySitter" do
   describe 'calc_bed_to_midnight' do 
     let(:bed_time)   {'9pm'}
 
-    subject { KataBabySitter.calc_bed_to_midnight(bed_time)}
+    subject { KataBabySitter.new.calc_bed_to_midnight(bed_time)}
 
     context 'when proper arguments' do 
       it { expect(subject).to eql(24)}
@@ -89,7 +81,7 @@ RSpec.describe "KataBabySitter" do
   describe 'calc_midnight_to_end' do 
     let(:end_time)   {'3am'}
 
-    subject { KataBabySitter.calc_midnight_to_end(end_time)}
+    subject { KataBabySitter.new.calc_midnight_to_end(end_time)}
 
     context 'when proper arguments' do 
       it { expect(subject).to eql(48)}
@@ -99,7 +91,7 @@ RSpec.describe "KataBabySitter" do
 
   describe 'format_time' do 
 
-    subject { KataBabySitter.format_time(time)}
+    subject { KataBabySitter.new.format_time(time)}
 
     context 'when contains am' do 
       let(:time) { '3am' }
