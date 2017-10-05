@@ -9,6 +9,7 @@ module KataBabySitter
   RATES = [PRE_BED = 12, BED_TO_MIDNIGHT = 8, MIDNIGHT_TO_END = 16]
 
   ## cut off range
+  MIDNIGHT = 24
   HARD_START = Time.parse('5pm')
   HARD_END = Time.parse('4am') + 86400
 
@@ -18,7 +19,11 @@ module KataBabySitter
   end
 
   def self.calc_pre_bed start_time, bed_time
-    PAYOUT << ((format_time(bed_time).hour - format_time(start_time).hour) * PRE_BED)
+    (format_time(bed_time).hour - format_time(start_time).hour) * PRE_BED
+  end
+
+  def self.calc_bed_to_midnight bed_time
+    (MIDNIGHT - format_time(bed_time).hour) * BED_TO_MIDNIGHT
   end
 
   def self.format_time time

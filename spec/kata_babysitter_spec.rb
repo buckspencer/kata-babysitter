@@ -69,7 +69,7 @@ RSpec.describe "KataBabySitter" do
     subject { KataBabySitter.calc_pre_bed(start_time, bed_time)}
 
     context 'when proper arguments' do 
-      it { expect(subject).to eql([36])}
+      it { expect(subject).to eql(36)}
     end
 
 
@@ -77,12 +77,11 @@ RSpec.describe "KataBabySitter" do
 
   describe 'calc_bed_to_midnight' do 
     let(:bed_time)   {'9pm'}
-    let(:midnight) {'12pm'}
 
     subject { KataBabySitter.calc_bed_to_midnight(bed_time)}
 
     context 'when proper arguments' do 
-      it { expect(subject).to eql([24])}
+      it { expect(subject).to eql(24)}
     end
 
   end
