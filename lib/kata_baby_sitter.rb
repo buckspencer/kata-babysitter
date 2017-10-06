@@ -26,7 +26,7 @@ class KataBabySitter
   end
 
   def calc_payment
-    [calc_pre_bed, calc_bed_to_midnight, after_midnight ].sum
+    [calc_pre_bed, calc_bed_to_midnight, after_midnight].sum
   end
 
   def calc_pre_bed
