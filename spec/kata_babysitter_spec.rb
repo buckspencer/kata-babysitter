@@ -104,7 +104,7 @@ RSpec.describe 'KataBabySitter' do
     context 'when bedtime is at midnight' do 
       let(:bed_time)   { '12am' }
 
-      it { expect(subject.calc_payment).to eql(108) }
+      it { expect(subject.calc_payment).to eql(120) }
     end
 
     context 'when bedtime and end is at midnight' do 
