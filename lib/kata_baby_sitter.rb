@@ -36,11 +36,11 @@ class KataBabySitter
   end
 
   def calc_bed_to_midnight
-    (MIDNIGHT - bed_time.hour) * BED_TO_MIDNIGHT
+    ( end_time.day > Time.now.day ? (MIDNIGHT - bed_time.hour) : (end_time.hour - bed_time.hour) ) * BED_TO_MIDNIGHT
   end
 
   def calc_midnight_to_end
-    end_time.hour * MIDNIGHT_TO_END
+    end_time.day > Time.now.day ? end_time.hour * MIDNIGHT_TO_END : 0  
   end
 
   def format_time time

@@ -90,7 +90,6 @@ RSpec.describe 'KataBabySitter' do
       it { expect(subject.calc_payment).to eql(52) }
     end
 
-
   end
 
 
