@@ -26,7 +26,7 @@ class KataBabySitter
   end
 
   def calc_payment
-    [calc_pre_bed, calc_bed_to_midnight, calc_midnight_to_end].sum
+    [calc_pre_bed, calc_bed_to_midnight, after_midnight ].sum
   end
 
   def calc_pre_bed
@@ -39,6 +39,14 @@ class KataBabySitter
 
   def calc_midnight_to_end 
     end_time > MIDNIGHT ? (end_time - MIDNIGHT) * MIDNIGHT_TO_END : 0
+  end
+
+  def calc_start_after_midnight
+    (end_time - start_time) * MIDNIGHT_TO_END
+  end
+
+  def after_midnight
+    start_time > MIDNIGHT ? calc_start_after_midnight : calc_midnight_to_end
   end
 
   def format_time time 
