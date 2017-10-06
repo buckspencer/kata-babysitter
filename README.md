@@ -15,6 +15,8 @@ The babysitter:
 
 ----------
 
+(Note: program will not calculate fractional hours and will remove any amounts to right of decimal.)
+
 Assuming you have ruby installed, follow this checklist to run the program: 
 
  1. clone repo: 
