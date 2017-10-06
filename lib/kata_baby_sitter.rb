@@ -20,11 +20,10 @@ class KataBabySitter
       @bed_time = format_time(bed_t)
 
     rescue
-      raise 'Please verify that you are entering your hours properly.'
+      raise run_time_error
     end
 
-    raise time_range_error if requirements_not_met?
-    raise order_error if start_time > end_time
+    raise run_time_error if inputs_improperly_formatted? || out_of_sequence?
   end
 
   def calc_payment
@@ -47,20 +46,16 @@ class KataBabySitter
     time.downcase.include?('am') ? Time.parse(time) + DAY_IN_SECS : Time.parse(time)
   end
 
-  def requirements_not_met?
-    (start_time < HARD_START || end_time > HARD_END)
+  def inputs_improperly_formatted?
+    [start_time.hour, end_time.hour, bed_time.hour].include?('.')
   end
 
-  def time_range_error
-    ArgumentError.new('Start and end times must be within given range.')
+  def out_of_sequence?
+    (start_time < HARD_START || end_time > HARD_END) || (bed_time > end_time) || (start_time > end_time)
   end
 
-  def order_error
-    ArgumentError.new('Start time must come before end time.')
-  end
-
-  def valid_arguments_error
-    ArgumentError.new('You must add valid arguments.')
+  def run_time_error
+    'Please verify that you are entering your hours properly.'
   end
 
 end

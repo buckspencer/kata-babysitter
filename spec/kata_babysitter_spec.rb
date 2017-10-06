@@ -2,10 +2,11 @@ require 'pry'
 require_relative '../lib/kata_baby_sitter'
 
 RSpec.describe 'KataBabySitter' do
-  let(:start_time) { '6pm' }
-  let(:end_time)   { '3am' }
-  let(:bed_time)   { '9pm' }
-  let(:day)        { KataBabySitter::DAY_IN_SECS }
+  let(:start_time)      { '6pm' }
+  let(:end_time)        { '3am' }
+  let(:bed_time)        { '9pm' }
+  let(:day)             { KataBabySitter::DAY_IN_SECS }
+  let(:run_time_error)  {'Please verify that you are entering your hours properly.'}
 
   subject { KataBabySitter.new(start_time, end_time, bed_time) }
 
@@ -26,6 +27,7 @@ RSpec.describe 'KataBabySitter' do
       it { expect(KataBabySitter::HARD_END.hour).to eql(4) }
 
     context 'error handling' do 
+
       context 'when arguments are correctly given' do
         it { expect{ subject }.not_to raise_error }
       end
@@ -35,7 +37,7 @@ RSpec.describe 'KataBabySitter' do
         let(:end_time)   { nil }
         let(:bed_time)   { nil }
 
-        it { expect{ subject }.to raise_error(RuntimeError, 'Please verify that you are entering your hours properly.') }
+        it { expect{ subject }.to raise_error(RuntimeError, run_time_error) }
       end
 
       context 'when numbers are passed' do 
@@ -43,7 +45,7 @@ RSpec.describe 'KataBabySitter' do
         let(:end_time)   { 9 }
         let(:bed_time)   { 9 }
 
-        it { expect{ subject }.to raise_error(RuntimeError, 'Please verify that you are entering your hours properly.') }
+        it { expect{ subject }.to raise_error(RuntimeError, run_time_error) }
       end
 
       context 'when words are passed' do 
@@ -51,32 +53,35 @@ RSpec.describe 'KataBabySitter' do
         let(:end_time)   { 'hey' }
         let(:bed_time)   { 'hey' }
 
-        it { expect{ subject }.to raise_error(RuntimeError, 'Please verify that you are entering your hours properly.') }
+        it { expect{ subject }.to raise_error(RuntimeError, run_time_error) }
       end
 
       context 'when a decimal is passed' do 
         let(:end_time)   { '11.5pm' }
 
-        it { expect{ subject }.to raise_error(RuntimeError, 'Please verify that you are entering your hours properly.') }
+        it { expect{ subject }.to raise_error(RuntimeError, run_time_error) }
       end
-
-
 
       context 'when start_time is later than end_time' do
         let(:end_time)   { '6am' }
 
-        it { expect{ subject }.to raise_error(ArgumentError, "Start and end times must be within given range.") }
+        it { expect{ subject }.to raise_error(RuntimeError, run_time_error) }
       end
 
       context 'when end_time is before than start_time' do 
         let(:end_time)   { '5pm' }
 
-        it { expect{ subject }.to raise_error(ArgumentError, "Start time must come before end time.") }
+        it { expect{ subject }.to raise_error(RuntimeError, run_time_error) }
+      end
+
+      context 'when end is before bed' do 
+        let(:end_time)   { '8pm' }
+
+        it { expect{ subject }.to raise_error(RuntimeError, run_time_error) }
       end
     end
 
   end
-
 
   describe 'calc_payment' do 
 
@@ -88,31 +93,6 @@ RSpec.describe 'KataBabySitter' do
       let(:end_time)   { '11pm' }
 
       it { expect(subject.calc_payment).to eql(52) }
-    end
-
-  end
-
-
-  describe 'calc_pre_bed' do
-
-    context 'when proper arguments' do
-      it { expect(subject.calc_pre_bed).to eql(36) }
-    end
-
-  end
-
-  describe 'calc_bed_to_midnight' do
-
-    context 'when proper arguments' do 
-      it { expect(subject.calc_bed_to_midnight).to eql(24) }
-    end
-
-  end
-
-  describe 'calc_midnight_to_end' do
-
-    context 'when proper arguments' do 
-      it { expect(subject.calc_midnight_to_end).to eql(48) }
     end
 
   end

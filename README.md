@@ -1,4 +1,3 @@
-
 Coding Kata for Pillar Technology
 ---------------------------------
 
@@ -8,17 +7,25 @@ This kata simulates a babysitter working and getting paid for one night. The rul
 
 The babysitter:
 
-> starts no earlier than 5:00PM leaves no later than 4:00AM gets paid
-> $12/hour from start-time to bedtime gets paid $8/hour from bedtime to
-> midnight gets paid $16/hour from midnigt to end of job gets paid for
-> full hours (no fractional hours)
+- starts no earlier than 5:00PM leaves no later than 4:00AM 
+- gets paid $12/hour from start-time to bedtime 
+- gets paid $8/hour from bedtime to midnight
+- gets paid $16/hour from midnigt to end of job 
+- gets paid for full hours (no fractional hours)
 
 ----------
 
-Assuming you have ruby installed follow this checklist to run the program: 
+Assuming you have ruby installed, follow this checklist to run the program: 
 
  1. clone repo: 
  2. cd into repo
  3. run `irb -r ./lib/kata_baby_sitter.rb`
- 4. to
- 4. KataBabySitter.new('6pm', '3am', '9pm').calc_payment
+ 4. to run properly please each hour in the following format -> "8pm"
+ 5. run `KataBabySitter.new(start_time, end_time, bed_time).calc_payment` 
+    with your hours instead of placeholders.
+    
+To run test suite. 
+
+ 1. ensure you are in root of repo
+ 2. run `bundle install`
+ 3. run 'rspec'
