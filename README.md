@@ -27,4 +27,4 @@ To run test suite.
 
  1. ensure you are in root of repo
  2. run `bundle install`
- 3. run 'rspec'
+ 3. run `rspec`
