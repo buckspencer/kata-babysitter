@@ -22,7 +22,7 @@ class KataBabySitter
       raise run_time_error
     end
 
-    raise run_time_error if inputs_improperly_formatted?(start_t, end_t, bed_t) || out_of_sequence?
+    raise run_time_error if out_of_sequence?
   end
 
   def calc_payment
@@ -43,10 +43,6 @@ class KataBabySitter
 
   def format_time time 
     time < 5 ? time + 12 : time
-  end
-
-  def inputs_improperly_formatted? start_t, end_t, bed_t
-    [start_t, end_t, bed_t].join.include?('.')
   end
 
   def out_of_sequence?

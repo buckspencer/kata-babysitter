@@ -5,16 +5,12 @@ RSpec.describe 'KataBabySitter' do
   let(:start_time)      { '6pm' }
   let(:end_time)        { '3am' }
   let(:bed_time)        { '9pm' }
-  let(:day)             { KataBabySitter::DAY_IN_SECS }
   let(:run_time_error)  {'Please verify that you are entering your hours properly.'}
 
   subject { KataBabySitter.new(start_time, end_time, bed_time) }
 
   describe 'business logic' do
 
-      it { expect(KataBabySitter::DAY_IN_SECS).to eql(86_400)}
-
-      it { expect(KataBabySitter::MIDNIGHT).to eql(24)}  
 
       it { expect(KataBabySitter::PRE_BED).to eql(12) }
 
@@ -22,9 +18,11 @@ RSpec.describe 'KataBabySitter' do
 
       it { expect(KataBabySitter::MIDNIGHT_TO_END).to eql(16) } 
 
-      it { expect(KataBabySitter::HARD_START.hour).to eql(17) }
+      it { expect(KataBabySitter::MIDNIGHT).to eql(12) }  
 
-      it { expect(KataBabySitter::HARD_END.hour).to eql(4) }
+      it { expect(KataBabySitter::HARD_START).to eql(5) }
+
+      it { expect(KataBabySitter::HARD_END).to eql(16) }
 
     context 'error handling' do 
 
@@ -125,23 +123,24 @@ RSpec.describe 'KataBabySitter' do
   end
 
   describe 'format_time' do
+    let(:number) { 15 }
 
     context 'when contains am' do 
       let(:time) { '3am' }
 
-      it { expect(subject.format_time(time)).to eql(Time.parse(time) + day) }
+      it { expect(subject.format_time(time.to_i)).to eql(number) }
     end
 
     context 'when contains pm' do
       let(:time) { '3pm' }
 
-      it { expect(subject.format_time(time)).to eql(Time.parse(time)) }
+      it { expect(subject.format_time(time.to_i)).to eql(number) }
     end
 
     context 'when contains AM' do
       let(:time) { '3AM' }
 
-      it { expect(subject.format_time(time)).to eql(Time.parse(time) + day) }
+      it { expect(subject.format_time(time.to_i)).to eql(number) }
     end
   end
 
