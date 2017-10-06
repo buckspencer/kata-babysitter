@@ -95,6 +95,33 @@ RSpec.describe 'KataBabySitter' do
       it { expect(subject.calc_payment).to eql(52) }
     end
 
+    context 'when end is at midnight' do 
+      let(:end_time)   { '12am' }
+
+      it { expect(subject.calc_payment).to eql(60) }
+    end
+
+    context 'when bedtime is at midnight' do 
+      let(:bed_time)   { '12am' }
+
+      it { expect(subject.calc_payment).to eql(108) }
+    end
+
+    context 'when bedtime and end is at midnight' do 
+      let(:bed_time)   { '12am' }
+      let(:end_time)   { '12am' }
+
+      it { expect(subject.calc_payment).to eql(72) }
+    end
+
+    context 'when start_time is at midnight' do 
+      let(:start_time)   { '12am' }
+      let(:bed_time)     { '1am'  }
+      let(:end_time)     { '4am'  }
+
+      it { expect(subject.calc_payment).to eql(64) }
+    end   
+
   end
 
   describe 'format_time' do
