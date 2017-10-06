@@ -35,7 +35,7 @@ RSpec.describe 'KataBabySitter' do
         let(:end_time)   { nil }
         let(:bed_time)   { nil }
 
-        it { expect(subject.calc_payment).to eql(0) }
+        it { expect{ subject.calc_payment }.to raise_error(RuntimeError, run_time_error) }
       end
 
       context 'when numbers are passed' do 
@@ -43,7 +43,7 @@ RSpec.describe 'KataBabySitter' do
         let(:end_time)   { 9 }
         let(:bed_time)   { 9 }
 
-        it { expect(subject.calc_payment).to eql(0) }
+        it { expect{ subject.calc_payment }.to raise_error(RuntimeError, run_time_error) }
       end
 
       context 'when words are passed' do 
@@ -51,7 +51,7 @@ RSpec.describe 'KataBabySitter' do
         let(:end_time)   { 'hey' }
         let(:bed_time)   { 'hey' }
 
-        it { expect(subject.calc_payment).to eql(0) }
+        it { expect{ subject.calc_payment }.to raise_error(RuntimeError, run_time_error) }
       end
 
       context 'when a decimal is passed' do 
@@ -128,19 +128,20 @@ RSpec.describe 'KataBabySitter' do
     context 'when contains am' do 
       let(:time) { '3am' }
 
-      it { expect(subject.format_time(time.to_i)).to eql(number) }
+      it { expect(subject.format_time(time, time.to_i)).to eql(number) }
     end
 
     context 'when contains pm' do
+      let(:pm_number) { time.to_i }
       let(:time) { '3pm' }
 
-      it { expect(subject.format_time(time.to_i)).to eql(number) }
+      it { expect(subject.format_time(time, time.to_i)).to eql(pm_number) }
     end
 
     context 'when contains AM' do
       let(:time) { '3AM' }
 
-      it { expect(subject.format_time(time.to_i)).to eql(number) }
+      it { expect(subject.format_time(time, time.to_i)).to eql(number) }
     end
   end
 

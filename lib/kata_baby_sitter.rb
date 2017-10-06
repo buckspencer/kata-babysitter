@@ -14,11 +14,11 @@ class KataBabySitter
 
     begin
 
-      @start_time = format_time(start_t.to_i)
-      @end_time = format_time(end_t.to_i)
-      @bed_time = format_time(bed_t.to_i)
+      @start_time = format_time(start_t, start_t.to_i)
+      @end_time = format_time(end_t, end_t.to_i)
+      @bed_time = format_time(bed_t, bed_t.to_i)
 
-    rescue
+    rescue NoMethodError
       raise run_time_error
     end
 
@@ -49,8 +49,8 @@ class KataBabySitter
     start_time > MIDNIGHT ? calc_start_after_midnight : calc_midnight_to_end
   end
 
-  def format_time time 
-    time < 5 ? time + 12 : time
+  def format_time raw, time 
+    (raw.downcase.include?('am') && time < 5) ? time + 12 : time
   end
 
   def out_of_sequence?
