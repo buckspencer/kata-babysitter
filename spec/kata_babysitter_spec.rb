@@ -57,7 +57,7 @@ RSpec.describe 'KataBabySitter' do
       end
 
       context 'when a decimal is passed' do 
-        let(:end_time)   { '11.5pm' }
+        let(:end_time)   { '2.5am' }
 
         it { expect{ subject }.to raise_error(RuntimeError, run_time_error) }
       end

@@ -23,7 +23,7 @@ class KataBabySitter
       raise run_time_error
     end
 
-    raise run_time_error if inputs_improperly_formatted? || out_of_sequence?
+    raise run_time_error if inputs_improperly_formatted?(start_t, end_t, bed_t) || out_of_sequence?
   end
 
   def calc_payment
@@ -46,8 +46,8 @@ class KataBabySitter
     time.downcase.include?('am') ? Time.parse(time) + DAY_IN_SECS : Time.parse(time)
   end
 
-  def inputs_improperly_formatted?
-    [start_time.hour, end_time.hour, bed_time.hour].include?('.')
+  def inputs_improperly_formatted? start_t, end_t, bed_t
+    [start_t, end_t, bed_t].join.include?('.')
   end
 
   def out_of_sequence?
