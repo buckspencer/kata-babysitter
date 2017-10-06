@@ -119,7 +119,7 @@ RSpec.describe 'KataBabySitter' do
       let(:bed_time)     { '1am'  }
       let(:end_time)     { '4am'  }
 
-      it { expect(subject.calc_payment).to eql(64) }
+      it { expect(subject.calc_payment).to eql(76) }
     end   
 
   end

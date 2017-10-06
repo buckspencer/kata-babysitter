@@ -34,7 +34,7 @@ class KataBabySitter
   end
 
   def calc_bed_to_midnight
-    (end_time > MIDNIGHT ? MIDNIGHT - bed_time : end_time - bed_time) * BED_TO_MIDNIGHT
+    bed_time < MIDNIGHT ? ((end_time > MIDNIGHT ? MIDNIGHT - bed_time : end_time - bed_time) * BED_TO_MIDNIGHT) : 0
   end
 
   def calc_midnight_to_end 
