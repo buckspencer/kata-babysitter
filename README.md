@@ -20,9 +20,8 @@ Assuming you have ruby installed, follow this checklist to run the program:
  1. clone repo: 
  2. cd into repo
  3. run `irb -r ./lib/kata_baby_sitter.rb`
- 4. to run properly please each hour in the following format -> "8pm"
+ 4. to run properly please enter each hour in the following format -> "8pm"
  5. run `KataBabySitter.new(start_time, end_time, bed_time).calc_payment` 
-    with your hours instead of placeholders.
     
 To run test suite. 
 
