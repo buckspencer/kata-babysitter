@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns='http://www.w3.org/1999/xhtml'>
   <head>
-    <title>Code coverage for Pillar babysitter kata</title>
+    <title>Code coverage for Kata-babysitter</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src='./assets/0.10.2/application.js' type='text/javascript'></script>    
     <link href='./assets/0.10.2/application.css' media='screen, projection, print' rel='stylesheet' type='text/css'>
@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-10-05T20:46:41-05:00">2017-10-05T20:46:41-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-10-06T19:18:48-05:00">2017-10-06T19:18:48-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.23
+         3.68
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>2</b> files in total.
-    <b>94</b> relevant lines. 
-    <span class="green"><b>94</b> lines covered</span> and
+    <b>115</b> relevant lines. 
+    <span class="green"><b>115</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -51,23 +51,23 @@
     <tbody>
       
       <tr>
-        <td class="strong"><a href="#c43f3c8c08f811b09cf125d1df63a02cea727dc2" class="src_link" title="lib/kata_baby_sitter.rb">lib/kata_baby_sitter.rb</a></td>
+        <td class="strong"><a href="#3b6738b1a2c5dc53dc770aab35f8d4d5effd9a66" class="src_link" title="lib/kata_baby_sitter.rb">lib/kata_baby_sitter.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>61</td>
-        <td>31</td>
-        <td>31</td>
+        <td>64</td>
+        <td>32</td>
+        <td>32</td>
         <td>0</td>
-        <td>4.7</td>
+        <td>7.0</td>
       </tr>
       
       <tr>
-        <td class="strong"><a href="#353bc743c867eb993f09f17df579f84f3f69f727" class="src_link" title="spec/kata_babysitter_spec.rb">spec/kata_babysitter_spec.rb</a></td>
+        <td class="strong"><a href="#ebede41049c8b818b874e8e04f2ba89d8df98b3e" class="src_link" title="spec/kata_babysitter_spec.rb">spec/kata_babysitter_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>121</td>
-        <td>63</td>
-        <td>63</td>
+        <td>158</td>
+        <td>83</td>
+        <td>83</td>
         <td>0</td>
-        <td>2.5</td>
+        <td>2.4</td>
       </tr>
       
     </tbody>
@@ -86,13 +86,13 @@
     
       <div class="source_files">
       
-        <div class="source_table" id="c43f3c8c08f811b09cf125d1df63a02cea727dc2">
+        <div class="source_table" id="3b6738b1a2c5dc53dc770aab35f8d4d5effd9a66">
   <div class="header">
     <h3>lib/kata_baby_sitter.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>31</b> relevant lines. 
-      <span class="green"><b>31</b> lines covered</span> and
+      <b>32</b> relevant lines. 
+      <span class="green"><b>32</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -127,340 +127,358 @@
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">  DAY_IN_SECS = 86_400</code>
+          <code class="ruby">  MIDNIGHT = 12</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">  MIDNIGHT = 24</code>
+          <code class="ruby">  HARD_START = 5 </code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">  HARD_START = Time.parse(&#39;5pm&#39;)</code>
+          <code class="ruby">  HARD_END = 16</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  HARD_END = Time.parse(&#39;4am&#39;) + DAY_IN_SECS</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="never" data-hits="" data-linenumber="8">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
+        <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
           <code class="ruby">  RATES = [PRE_BED = 12, BED_TO_MIDNIGHT = 8, MIDNIGHT_TO_END = 16]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
           <code class="ruby">  attr_reader :start_time, :end_time, :bed_time</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
+        <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
           <code class="ruby">  def initialize start_t, end_t, bed_t</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="16">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="18" data-linenumber="15">
+          <span class="hits">18</span>
           
           <code class="ruby">    begin</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="18">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="18" data-linenumber="17">
+          <span class="hits">18</span>
           
-          <code class="ruby">      @start_time = format_time(start_t)</code>
+          <code class="ruby">      @start_time = format_time(start_t, start_t.to_i)</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="19">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="16" data-linenumber="18">
+          <span class="hits">16</span>
           
-          <code class="ruby">      @end_time = format_time(end_t)</code>
+          <code class="ruby">      @end_time = format_time(end_t, end_t.to_i)</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="20">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="16" data-linenumber="19">
+          <span class="hits">16</span>
           
-          <code class="ruby">      @bed_time = format_time(bed_t)</code>
+          <code class="ruby">      @bed_time = format_time(bed_t, bed_t.to_i)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    rescue NoMethodError</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
-          <code class="ruby">    rescue</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="23">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="22">
+          <span class="hits">2</span>
           
           <code class="ruby">      raise run_time_error</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="26">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="16" data-linenumber="25">
+          <span class="hits">16</span>
           
-          <code class="ruby">    raise run_time_error if inputs_improperly_formatted? || out_of_sequence?</code>
+          <code class="ruby">    raise run_time_error if out_of_sequence?</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="28">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="29">
+        <li class="covered" data-hits="1" data-linenumber="28">
           <span class="hits">1</span>
           
           <code class="ruby">  def calc_payment</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="30">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="9" data-linenumber="29">
+          <span class="hits">9</span>
           
-          <code class="ruby">    [calc_pre_bed, calc_bed_to_midnight, calc_midnight_to_end].sum</code>
+          <code class="ruby">    [calc_pre_bed, calc_bed_to_midnight, after_midnight].sum</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="31">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="32">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="33">
+        <li class="covered" data-hits="1" data-linenumber="32">
           <span class="hits">1</span>
           
           <code class="ruby">  def calc_pre_bed</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="34">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="9" data-linenumber="33">
+          <span class="hits">9</span>
           
-          <code class="ruby">    (bed_time.hour - start_time.hour) * PRE_BED</code>
+          <code class="ruby">    (bed_time - start_time) * PRE_BED</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="35">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="36">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="37">
+        <li class="covered" data-hits="1" data-linenumber="36">
           <span class="hits">1</span>
           
           <code class="ruby">  def calc_bed_to_midnight</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="38">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="9" data-linenumber="37">
+          <span class="hits">9</span>
           
-          <code class="ruby">    ( end_time.day &gt; Time.now.day ? (MIDNIGHT - bed_time.hour) : (end_time.hour - bed_time.hour) ) * BED_TO_MIDNIGHT</code>
+          <code class="ruby">    bed_time &lt; MIDNIGHT ? ((end_time &gt; MIDNIGHT ? MIDNIGHT - bed_time : end_time - bed_time) * BED_TO_MIDNIGHT) : 0</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="39">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="40">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="41">
+        <li class="covered" data-hits="1" data-linenumber="40">
           <span class="hits">1</span>
           
-          <code class="ruby">  def calc_midnight_to_end</code>
+          <code class="ruby">  def calc_midnight_to_end </code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="42">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="8" data-linenumber="41">
+          <span class="hits">8</span>
           
-          <code class="ruby">    end_time.day &gt; Time.now.day ? end_time.hour * MIDNIGHT_TO_END : 0  </code>
+          <code class="ruby">    end_time &gt; MIDNIGHT ? (end_time - MIDNIGHT) * MIDNIGHT_TO_END : 0</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="42">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="43">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="44">
+        <li class="covered" data-hits="1" data-linenumber="44">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">  def calc_start_after_midnight</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="45">
           <span class="hits">1</span>
           
-          <code class="ruby">  def format_time time</code>
+          <code class="ruby">    (end_time - start_time) * MIDNIGHT_TO_END</code>
         </li>
       
-        <li class="covered" data-hits="36" data-linenumber="46">
-          <span class="hits">36</span>
+        <li class="never" data-hits="" data-linenumber="46">
           
-          <code class="ruby">    time.downcase.include?(&#39;am&#39;) ? Time.parse(time) + DAY_IN_SECS : Time.parse(time)</code>
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="47">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="48">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="49">
+        <li class="covered" data-hits="1" data-linenumber="48">
           <span class="hits">1</span>
           
-          <code class="ruby">  def inputs_improperly_formatted?</code>
+          <code class="ruby">  def after_midnight</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="50">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="9" data-linenumber="49">
+          <span class="hits">9</span>
           
-          <code class="ruby">    [start_time.hour, end_time.hour, bed_time.hour].include?(&#39;.&#39;)</code>
+          <code class="ruby">    start_time &gt; MIDNIGHT ? calc_start_after_midnight : calc_midnight_to_end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="50">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="51">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="52">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="53">
+        <li class="covered" data-hits="1" data-linenumber="52">
           <span class="hits">1</span>
           
-          <code class="ruby">  def out_of_sequence?</code>
+          <code class="ruby">  def format_time raw, time </code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="54">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="53" data-linenumber="53">
+          <span class="hits">53</span>
           
-          <code class="ruby">    (start_time &lt; HARD_START || end_time &gt; HARD_END) || (bed_time &gt; end_time) || (start_time &gt; end_time)</code>
+          <code class="ruby">    (raw.downcase.include?(&#39;am&#39;) &amp;&amp; time &lt; 5) ? time + 12 : time</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="54">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="55">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="56">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="57">
+        <li class="covered" data-hits="1" data-linenumber="56">
           <span class="hits">1</span>
           
-          <code class="ruby">  def run_time_error</code>
+          <code class="ruby">  def out_of_sequence?</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="58">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="16" data-linenumber="57">
+          <span class="hits">16</span>
           
-          <code class="ruby">    &#39;Please verify that you are entering your hours properly.&#39;</code>
+          <code class="ruby">    (start_time &lt; HARD_START || end_time &gt; HARD_END) || (bed_time &gt; end_time) || (start_time &gt; end_time)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="58">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="59">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="60">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def run_time_error</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="61">
+          <span class="hits">6</span>
+          
+          <code class="ruby">    &#39;Please verify that you are entering your hours properly.&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="62">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="60">
+        <li class="never" data-hits="" data-linenumber="63">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="61">
+        <li class="never" data-hits="" data-linenumber="64">
           
           
           <code class="ruby">end</code>
@@ -471,13 +489,13 @@
 </div>
 
       
-        <div class="source_table" id="353bc743c867eb993f09f17df579f84f3f69f727">
+        <div class="source_table" id="ebede41049c8b818b874e8e04f2ba89d8df98b3e">
   <div class="header">
     <h3>spec/kata_babysitter_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>63</b> relevant lines. 
-      <span class="green"><b>63</b> lines covered</span> and
+      <b>83</b> relevant lines. 
+      <span class="green"><b>83</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -509,58 +527,58 @@
           <code class="ruby">RSpec.describe &#39;KataBabySitter&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="5">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="14" data-linenumber="5">
+          <span class="hits">14</span>
           
           <code class="ruby">  let(:start_time)      { &#39;6pm&#39; }</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="6">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="6">
+          <span class="hits">7</span>
           
           <code class="ruby">  let(:end_time)        { &#39;3am&#39; }</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="7">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="12" data-linenumber="7">
+          <span class="hits">12</span>
           
           <code class="ruby">  let(:bed_time)        { &#39;9pm&#39; }</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="8">
-          <span class="hits">3</span>
-          
-          <code class="ruby">  let(:day)             { KataBabySitter::DAY_IN_SECS }</code>
-        </li>
-      
-        <li class="covered" data-hits="8" data-linenumber="9">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="7" data-linenumber="8">
+          <span class="hits">7</span>
           
           <code class="ruby">  let(:run_time_error)  {&#39;Please verify that you are entering your hours properly.&#39;}</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="11">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="19" data-linenumber="10">
+          <span class="hits">19</span>
           
           <code class="ruby">  subject { KataBabySitter.new(start_time, end_time, bed_time) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="13">
+        <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
           <code class="ruby">  describe &#39;business logic&#39; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
@@ -572,7 +590,7 @@
         <li class="covered" data-hits="2" data-linenumber="15">
           <span class="hits">2</span>
           
-          <code class="ruby">      it { expect(KataBabySitter::DAY_IN_SECS).to eql(86_400)}</code>
+          <code class="ruby">      it { expect(KataBabySitter::PRE_BED).to eql(12) }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="16">
@@ -584,7 +602,7 @@
         <li class="covered" data-hits="2" data-linenumber="17">
           <span class="hits">2</span>
           
-          <code class="ruby">      it { expect(KataBabySitter::MIDNIGHT).to eql(24)}  </code>
+          <code class="ruby">      it { expect(KataBabySitter::BED_TO_MIDNIGHT).to eql(8) }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
@@ -596,7 +614,7 @@
         <li class="covered" data-hits="2" data-linenumber="19">
           <span class="hits">2</span>
           
-          <code class="ruby">      it { expect(KataBabySitter::PRE_BED).to eql(12) }</code>
+          <code class="ruby">      it { expect(KataBabySitter::MIDNIGHT_TO_END).to eql(16) } </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
@@ -608,7 +626,7 @@
         <li class="covered" data-hits="2" data-linenumber="21">
           <span class="hits">2</span>
           
-          <code class="ruby">      it { expect(KataBabySitter::BED_TO_MIDNIGHT).to eql(8) }</code>
+          <code class="ruby">      it { expect(KataBabySitter::MIDNIGHT).to eql(12) }  </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
@@ -620,7 +638,7 @@
         <li class="covered" data-hits="2" data-linenumber="23">
           <span class="hits">2</span>
           
-          <code class="ruby">      it { expect(KataBabySitter::MIDNIGHT_TO_END).to eql(16) } </code>
+          <code class="ruby">      it { expect(KataBabySitter::HARD_START).to eql(5) }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="24">
@@ -632,7 +650,7 @@
         <li class="covered" data-hits="2" data-linenumber="25">
           <span class="hits">2</span>
           
-          <code class="ruby">      it { expect(KataBabySitter::HARD_START.hour).to eql(17) }</code>
+          <code class="ruby">      it { expect(KataBabySitter::HARD_END).to eql(16) }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
@@ -641,10 +659,10 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="27">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
           
-          <code class="ruby">      it { expect(KataBabySitter::HARD_END.hour).to eql(4) }</code>
+          <code class="ruby">    context &#39;with incorrectly given arguments&#39; do </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
@@ -656,421 +674,421 @@
         <li class="covered" data-hits="1" data-linenumber="29">
           <span class="hits">1</span>
           
-          <code class="ruby">    context &#39;error handling&#39; do </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="30">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="31">
-          <span class="hits">1</span>
-          
           <code class="ruby">      context &#39;when arguments are correctly given&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="32">
+        <li class="covered" data-hits="3" data-linenumber="30">
           <span class="hits">3</span>
           
-          <code class="ruby">        it { expect{ subject }.not_to raise_error }</code>
+          <code class="ruby">        it { expect{ subject.calc_payment }.not_to raise_error }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="32">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="35">
+        <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
           <code class="ruby">      context &#39;when nils are passed&#39; do </code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="36">
+        <li class="covered" data-hits="2" data-linenumber="34">
           <span class="hits">2</span>
           
           <code class="ruby">        let(:start_time) { nil }</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="37">
+        <li class="covered" data-hits="2" data-linenumber="35">
           <span class="hits">2</span>
           
           <code class="ruby">        let(:end_time)   { nil }</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="38">
+        <li class="covered" data-hits="2" data-linenumber="36">
           <span class="hits">2</span>
           
           <code class="ruby">        let(:bed_time)   { nil }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
+        <li class="never" data-hits="" data-linenumber="37">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="40">
+        <li class="covered" data-hits="3" data-linenumber="38">
           <span class="hits">3</span>
           
-          <code class="ruby">        it { expect{ subject }.to raise_error(RuntimeError, run_time_error) }</code>
+          <code class="ruby">        it { expect{ subject.calc_payment }.to raise_error(RuntimeError, run_time_error) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="41">
+        <li class="never" data-hits="" data-linenumber="39">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="42">
+        <li class="never" data-hits="" data-linenumber="40">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="43">
+        <li class="covered" data-hits="1" data-linenumber="41">
           <span class="hits">1</span>
           
           <code class="ruby">      context &#39;when numbers are passed&#39; do </code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="44">
+        <li class="covered" data-hits="2" data-linenumber="42">
           <span class="hits">2</span>
           
           <code class="ruby">        let(:start_time) { 9 }</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="45">
+        <li class="covered" data-hits="2" data-linenumber="43">
           <span class="hits">2</span>
           
           <code class="ruby">        let(:end_time)   { 9 }</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="46">
+        <li class="covered" data-hits="2" data-linenumber="44">
           <span class="hits">2</span>
           
           <code class="ruby">        let(:bed_time)   { 9 }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="47">
+        <li class="never" data-hits="" data-linenumber="45">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="48">
+        <li class="covered" data-hits="3" data-linenumber="46">
           <span class="hits">3</span>
           
-          <code class="ruby">        it { expect{ subject }.to raise_error(RuntimeError, run_time_error) }</code>
+          <code class="ruby">        it { expect{ subject.calc_payment }.to raise_error(RuntimeError, run_time_error) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="49">
+        <li class="never" data-hits="" data-linenumber="47">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="50">
+        <li class="never" data-hits="" data-linenumber="48">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="51">
+        <li class="covered" data-hits="1" data-linenumber="49">
           <span class="hits">1</span>
           
           <code class="ruby">      context &#39;when words are passed&#39; do </code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="52">
+        <li class="covered" data-hits="2" data-linenumber="50">
           <span class="hits">2</span>
           
           <code class="ruby">        let(:start_time) { &#39;hey&#39; }</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="53">
+        <li class="covered" data-hits="2" data-linenumber="51">
           <span class="hits">2</span>
           
           <code class="ruby">        let(:end_time)   { &#39;hey&#39; }</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="54">
+        <li class="covered" data-hits="2" data-linenumber="52">
           <span class="hits">2</span>
           
           <code class="ruby">        let(:bed_time)   { &#39;hey&#39; }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="55">
+        <li class="never" data-hits="" data-linenumber="53">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="56">
+        <li class="covered" data-hits="3" data-linenumber="54">
           <span class="hits">3</span>
           
-          <code class="ruby">        it { expect{ subject }.to raise_error(RuntimeError, run_time_error) }</code>
+          <code class="ruby">        it { expect{ subject.calc_payment }.to raise_error(RuntimeError, run_time_error) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="57">
+        <li class="never" data-hits="" data-linenumber="55">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="58">
+        <li class="never" data-hits="" data-linenumber="56">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="59">
+        <li class="covered" data-hits="1" data-linenumber="57">
           <span class="hits">1</span>
           
           <code class="ruby">      context &#39;when a decimal is passed&#39; do </code>
         </li>
       
+        <li class="covered" data-hits="2" data-linenumber="58">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        let(:end_time)   { &#39;2.5am&#39; }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="59">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
         <li class="covered" data-hits="2" data-linenumber="60">
           <span class="hits">2</span>
           
-          <code class="ruby">        let(:end_time)   { &#39;11.5pm&#39; }</code>
+          <code class="ruby">        it { expect(subject.calc_payment).to eql(92) }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="61">
           
           
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="62">
-          <span class="hits">3</span>
-          
-          <code class="ruby">        it { expect{ subject }.to raise_error(RuntimeError, run_time_error) }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="63">
-          
-          
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="64">
+        <li class="never" data-hits="" data-linenumber="62">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="65">
+        <li class="covered" data-hits="1" data-linenumber="63">
           <span class="hits">1</span>
           
           <code class="ruby">      context &#39;when start_time is later than end_time&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="66">
+        <li class="covered" data-hits="2" data-linenumber="64">
           <span class="hits">2</span>
           
           <code class="ruby">        let(:end_time)   { &#39;6am&#39; }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="67">
+        <li class="never" data-hits="" data-linenumber="65">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="68">
+        <li class="covered" data-hits="3" data-linenumber="66">
           <span class="hits">3</span>
           
-          <code class="ruby">        it { expect{ subject }.to raise_error(RuntimeError, run_time_error) }</code>
+          <code class="ruby">        it { expect{ subject.calc_payment }.to raise_error(RuntimeError, run_time_error) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="69">
+        <li class="never" data-hits="" data-linenumber="67">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="70">
+        <li class="never" data-hits="" data-linenumber="68">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="71">
+        <li class="covered" data-hits="1" data-linenumber="69">
           <span class="hits">1</span>
           
           <code class="ruby">      context &#39;when end_time is before than start_time&#39; do </code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="72">
+        <li class="covered" data-hits="2" data-linenumber="70">
           <span class="hits">2</span>
           
           <code class="ruby">        let(:end_time)   { &#39;5pm&#39; }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="73">
+        <li class="never" data-hits="" data-linenumber="71">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="74">
+        <li class="covered" data-hits="3" data-linenumber="72">
           <span class="hits">3</span>
           
-          <code class="ruby">        it { expect{ subject }.to raise_error(RuntimeError, run_time_error) }</code>
+          <code class="ruby">        it { expect{ subject.calc_payment }.to raise_error(RuntimeError, run_time_error) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="75">
+        <li class="never" data-hits="" data-linenumber="73">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="76">
+        <li class="never" data-hits="" data-linenumber="74">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="77">
+        <li class="covered" data-hits="1" data-linenumber="75">
           <span class="hits">1</span>
           
           <code class="ruby">      context &#39;when end is before bed&#39; do </code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="78">
+        <li class="covered" data-hits="2" data-linenumber="76">
           <span class="hits">2</span>
           
           <code class="ruby">        let(:end_time)   { &#39;8pm&#39; }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="79">
+        <li class="never" data-hits="" data-linenumber="77">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="80">
+        <li class="covered" data-hits="3" data-linenumber="78">
           <span class="hits">3</span>
           
-          <code class="ruby">        it { expect{ subject }.to raise_error(RuntimeError, run_time_error) }</code>
+          <code class="ruby">        it { expect{ subject.calc_payment }.to raise_error(RuntimeError, run_time_error) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="81">
+        <li class="never" data-hits="" data-linenumber="79">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="82">
+        <li class="never" data-hits="" data-linenumber="80">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="81">
           
           
           <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="82">
+          
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="83">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="84">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="85">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="86">
+        <li class="covered" data-hits="1" data-linenumber="85">
           <span class="hits">1</span>
           
           <code class="ruby">  describe &#39;calc_payment&#39; do </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="87">
+        <li class="never" data-hits="" data-linenumber="86">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="88">
+        <li class="covered" data-hits="1" data-linenumber="87">
           <span class="hits">1</span>
           
           <code class="ruby">    context &#39;with expected input&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="89">
+        <li class="covered" data-hits="2" data-linenumber="88">
           <span class="hits">2</span>
           
           <code class="ruby">      it { expect(subject.calc_payment).to eql(108) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="90">
+        <li class="never" data-hits="" data-linenumber="89">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="91">
+        <li class="never" data-hits="" data-linenumber="90">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="92">
+        <li class="covered" data-hits="1" data-linenumber="91">
           <span class="hits">1</span>
           
           <code class="ruby">    context &#39;when end is before midnight&#39; do </code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="93">
+        <li class="covered" data-hits="2" data-linenumber="92">
           <span class="hits">2</span>
           
           <code class="ruby">      let(:end_time)   { &#39;11pm&#39; }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="94">
+        <li class="never" data-hits="" data-linenumber="93">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="95">
+        <li class="covered" data-hits="2" data-linenumber="94">
           <span class="hits">2</span>
           
           <code class="ruby">      it { expect(subject.calc_payment).to eql(52) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="96">
+        <li class="never" data-hits="" data-linenumber="95">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="97">
+        <li class="never" data-hits="" data-linenumber="96">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="98">
+        <li class="covered" data-hits="1" data-linenumber="97">
+          <span class="hits">1</span>
           
+          <code class="ruby">    context &#39;when end is at midnight&#39; do </code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="98">
+          <span class="hits">2</span>
           
-          <code class="ruby">  end</code>
+          <code class="ruby">      let(:end_time)   { &#39;12am&#39; }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="99">
@@ -1079,124 +1097,124 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="100">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="100">
+          <span class="hits">2</span>
           
-          <code class="ruby">  describe &#39;format_time&#39; do</code>
+          <code class="ruby">      it { expect(subject.calc_payment).to eql(60) }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="101">
           
           
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="102">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="102">
+        <li class="covered" data-hits="1" data-linenumber="103">
           <span class="hits">1</span>
           
-          <code class="ruby">    context &#39;when contains am&#39; do </code>
+          <code class="ruby">    context &#39;when bedtime is at midnight&#39; do </code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="103">
+        <li class="covered" data-hits="2" data-linenumber="104">
           <span class="hits">2</span>
           
-          <code class="ruby">      let(:time) { &#39;3am&#39; }</code>
+          <code class="ruby">      let(:bed_time)   { &#39;12am&#39; }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="104">
+        <li class="never" data-hits="" data-linenumber="105">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="105">
+        <li class="covered" data-hits="2" data-linenumber="106">
           <span class="hits">2</span>
           
-          <code class="ruby">      it { expect(subject.format_time(time)).to eql(Time.parse(time) + day) }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="106">
-          
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      it { expect(subject.calc_payment).to eql(120) }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="107">
           
           
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="108">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="108">
+        <li class="covered" data-hits="1" data-linenumber="109">
           <span class="hits">1</span>
           
-          <code class="ruby">    context &#39;when contains pm&#39; do</code>
+          <code class="ruby">    context &#39;when bedtime and endtime is at midnight&#39; do </code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="109">
+        <li class="covered" data-hits="2" data-linenumber="110">
           <span class="hits">2</span>
           
-          <code class="ruby">      let(:time) { &#39;3pm&#39; }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="110">
-          
-          
-          <code class="ruby"></code>
+          <code class="ruby">      let(:bed_time)   { &#39;12am&#39; }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="111">
           <span class="hits">2</span>
           
-          <code class="ruby">      it { expect(subject.format_time(time)).to eql(Time.parse(time)) }</code>
+          <code class="ruby">      let(:end_time)   { &#39;12am&#39; }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="112">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="113">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      it { expect(subject.calc_payment).to eql(72) }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="114">
+          
+          
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="113">
+        <li class="never" data-hits="" data-linenumber="115">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="114">
+        <li class="covered" data-hits="1" data-linenumber="116">
           <span class="hits">1</span>
           
-          <code class="ruby">    context &#39;when contains AM&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="115">
-          <span class="hits">2</span>
-          
-          <code class="ruby">      let(:time) { &#39;3AM&#39; }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="116">
-          
-          
-          <code class="ruby"></code>
+          <code class="ruby">    context &#39;when start_time is at midnight&#39; do </code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="117">
           <span class="hits">2</span>
           
-          <code class="ruby">      it { expect(subject.format_time(time)).to eql(Time.parse(time) + day) }</code>
+          <code class="ruby">      let(:start_time)   { &#39;12am&#39; }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="118">
+        <li class="covered" data-hits="2" data-linenumber="118">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      let(:bed_time)     { &#39;1am&#39;  }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="119">
+        <li class="covered" data-hits="2" data-linenumber="119">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">      let(:end_time)     { &#39;4am&#39;  }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="120">
@@ -1205,7 +1223,229 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="121">
+        <li class="covered" data-hits="2" data-linenumber="121">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      it { expect(subject.calc_payment).to eql(76) }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="122">
+          
+          
+          <code class="ruby">    end   </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="123">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="124">
+          
+          
+          <code class="ruby">    ## technically overtime pay</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="125">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    context &#39;when start_time is after midnight&#39; do </code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="126">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      let(:start_time)   { &#39;1am&#39; }</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="127">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      let(:bed_time)     { &#39;2am&#39;  }</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="128">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      let(:end_time)     { &#39;4am&#39;  }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="129">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="130">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      it { expect(subject.calc_payment).to eql(60) }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="131">
+          
+          
+          <code class="ruby">    end </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="132">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="133">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="134">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="135">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &#39;format_time&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="136">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    let(:number) { 15 }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="137">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="138">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    context &#39;when contains am&#39; do </code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="139">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      let(:time) { &#39;3am&#39; }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="140">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="141">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      it { expect(subject.format_time(time, time.to_i)).to eql(number) }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="142">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="143">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="144">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    context &#39;when contains pm&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="145">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      let(:pm_number) { time.to_i }</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="146">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      let(:time) { &#39;3pm&#39; }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="147">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="148">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      it { expect(subject.format_time(time, time.to_i)).to eql(pm_number) }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="149">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="150">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="151">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    context &#39;when contains AM&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="152">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      let(:time) { &#39;3AM&#39; }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="153">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="154">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      it { expect(subject.format_time(time, time.to_i)).to eql(number) }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="155">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="156">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="157">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="158">
           
           
           <code class="ruby">end</code>

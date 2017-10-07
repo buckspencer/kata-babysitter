@@ -121,6 +121,15 @@ RSpec.describe 'KataBabySitter' do
       it { expect(subject.calc_payment).to eql(76) }
     end   
 
+    ## technically overtime pay
+    context 'when start_time is after midnight' do 
+      let(:start_time)   { '1am' }
+      let(:bed_time)     { '2am'  }
+      let(:end_time)     { '4am'  }
+
+      it { expect(subject.calc_payment).to eql(60) }
+    end 
+
   end
 
   describe 'format_time' do
