@@ -1,4 +1,4 @@
-require 'pry'
+# require 'pry'
 require_relative '../lib/kata_baby_sitter'
 
 RSpec.describe 'KataBabySitter' do
@@ -121,7 +121,7 @@ RSpec.describe 'KataBabySitter' do
       it { expect(subject.calc_payment).to eql(76) }
     end   
 
-    ## technically overtime pay
+    # technically overtime pay
     context 'when start_time is after midnight' do 
       let(:start_time)   { '1am' }
       let(:bed_time)     { '2am'  }

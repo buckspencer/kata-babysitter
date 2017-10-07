@@ -1,5 +1,3 @@
-require 'time'
-
 class KataBabySitter
 
   MIDNIGHT = 12
