@@ -77,6 +77,7 @@ RSpec.describe 'KataBabySitter' do
 
         it { expect{ subject.calc_payment }.to raise_error(RuntimeError, run_time_error) }
       end
+
     end
 
   end
